@@ -1,0 +1,25 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-X_sB_GVv.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BZefPx2I.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/echo.js": {
+    "file": "assets/echo-k6hL8o68.js",
+    "name": "echo",
+    "src": "resources/js/echo.js",
+    "isEntry": true
+  },
+  "resources/js/message.js": {
+    "file": "assets/message-DsdnBDtx.js",
+    "name": "message",
+    "src": "resources/js/message.js",
+    "isEntry": true
+  }
+}
