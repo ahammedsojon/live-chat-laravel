@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -17,9 +18,24 @@ class SendMessageEvent implements ShouldBroadcast
     /**
      * Create a new event instance.
      */
-    public function __construct(public string $text, public int $from_id,  public int $to_id)
+    public $text;
+    public $from_id;
+    public $to_id;
+    public $from_user;
+
+    public function __construct(string $text, int $from_id, int $to_id)
     {
-        //
+        $this->text = $text;
+        $this->from_id = $from_id;
+        $this->to_id = $to_id;
+        
+        // Include sender user data for adding to sidebar
+        $fromUser = User::find($from_id);
+        $this->from_user = $fromUser ? [
+            'id' => $fromUser->id,
+            'name' => $fromUser->name,
+            'email' => $fromUser->email,
+        ] : null;
     }
 
     /**

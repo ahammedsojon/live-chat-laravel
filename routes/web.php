@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,5 +30,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/messages', [ChatController::class, 'getMessages'])->name('get-messages');
 Route::post('/send-message', [ChatController::class, 'sendMessage'])->name('send-message');
+Route::get('/group-messages', [GroupController::class, 'getGroupMessages'])->name('get-group-messages');
+Route::post('/create-group', [GroupController::class, 'createGroup'])->name('create-group');
+Route::post('/send-group-message', [GroupController::class, 'sendGroupMessage'])->name('send-group-message');
 
 require __DIR__.'/auth.php';
